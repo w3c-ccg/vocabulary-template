@@ -36,4 +36,4 @@ property:
     domain: ExampleClass
     id: exampleProperty
     label: Example property
-    context: https://w3id.org/vital-records/v1rc1
+    context: https://w3id.org/example/v1rc1

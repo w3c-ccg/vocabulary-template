@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "An example vocabulary.",
   "scripts": {
-    "build": "yml2vocab -v vocabulary.yml -t template.html -c"
+    "build": "yml2vocab -v vocabulary.yml && mv vocabulary.html index.html",
+    "serve": "http-server"
   },
   "repository": {
     "type": "git",
@@ -14,6 +15,7 @@
   ],
   "license": "BSD-3-Clause",
   "dependencies": {
+    "http-server": "^14.1.1",
     "yml2vocab": "^1.6.2"
   }
 }

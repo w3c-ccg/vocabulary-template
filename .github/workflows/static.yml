@@ -37,6 +37,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Build vocabulary
+        run: |
+          npm install
+          npm run build
+          rm -rf node_modules
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
