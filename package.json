@@ -1,0 +1,19 @@
+{
+  "name": "example-vocabulary",
+  "version": "1.0.0",
+  "description": "An example vocabulary.",
+  "scripts": {
+    "build": "yml2vocab -v vocabulary.yml -t template.html -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/example/vocabulary"
+  },
+  "keywords": [
+    "vocabulary"
+  ],
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "yml2vocab": "^1.6.2"
+  }
+}

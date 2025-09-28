@@ -1,0 +1,39 @@
+vocab:
+  id: example
+  value: https://w3id.org/example#
+ontology:
+  - property: dc:title
+    value: Example Vocabulary
+  - property: dc:abstract
+    value: >-
+      The example vocabulary is meant to provide a basic example of a yml2vocab
+      vocabulary document.
+  - property: dc:description
+    value: >-
+      This provides an example of a yml2vocab vocabulary.
+prefix:
+  - id: ex
+    value: https://w3id.org/example#
+  - id: schema
+    value: https://schema.org/
+class:
+  - comment: >-
+      An example class.
+    id: ExampleClass
+    label: Example Class
+    context: https://w3id.org/example/v1rc1
+    example:
+      - label: A basic example of the Attendant class expressed as JSON-LD.
+        json: |-
+          {
+            "@context": "https://w3id.org/example/v1rc1",
+            "type": "ExampleClass",
+            "exampleProperty": "Example"
+          }
+property:
+  - comment: >
+      This is an example property.
+    domain: ExampleClass
+    id: exampleProperty
+    label: Example property
+    context: https://w3id.org/vital-records/v1rc1
