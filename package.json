@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "An example vocabulary.",
   "scripts": {
-    "build": "yml2vocab -v vocabulary.yml && mv vocabulary.html index.html",
-    "serve": "http-server"
+    "build": "yml2vocab -v vocabulary.yml -c && mv vocabulary.html dist/index.html && mv vocabulary.context.jsonld dist/context.jsonld",
+    "serve": "http-server dist/"
   },
   "repository": {
     "type": "git",
