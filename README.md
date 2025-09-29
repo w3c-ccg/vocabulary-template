@@ -29,3 +29,25 @@ npm run serve
 ```
 
 Use your web browser to go to the URL provided from the command above.
+
+# Releasing the Vocabulary and Context
+
+By default, the context will be published alongside the documentation into the
+`dist/` folder as `context.jsonld`. However, because that file will change over
+time, cutting a release (i.e. naming the context and then never changing it) is
+best practice.
+
+To do that, use the release command (see below--where `v1rc1` is the release):
+
+```sh
+npm run release -- v1rc1
+```
+
+This will rebuild the documentation and context and copy `dist/context.jsonld`
+to `dist/v1rc1.jsonld` (in the above example) and force add it to the `dist/`
+folder--as no other files should be committed here by developers.
+
+Once those changes are committed and pushed, the commit should be tagged (i.e.
+`git tag v1rc1`) and pushed (`git push origin --tags`).
+
+A permanent alias URL can be created at https://w3id.org/
