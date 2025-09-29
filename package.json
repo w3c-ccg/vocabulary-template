@@ -4,6 +4,7 @@
   "description": "An example vocabulary.",
   "scripts": {
     "build": "yml2vocab -v vocabulary.yml -c && mv vocabulary.html dist/index.html && mv vocabulary.context.jsonld dist/context.jsonld",
+    "release": "bash -c 'VERSION=$0; npm run build && mv dist/context.jsonld \"dist/$VERSION.jsonld\" && git add -f dist/$VERSION.jsonld'",
     "serve": "http-server dist/"
   },
   "repository": {
