@@ -15,7 +15,7 @@
     "vocabulary"
   ],
   "license": "BSD-3-Clause",
-  "dependencies": {
+  "devDependencies": {
     "http-server": "^14.1.1",
     "yml2vocab": "^1.6.2"
   }
