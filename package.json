@@ -2,9 +2,10 @@
   "name": "example-vocabulary",
   "version": "1.0.0",
   "description": "An example vocabulary.",
+  "type": "module",
   "scripts": {
     "clean": "rm dist/*",
-    "build": "yml2vocab -v vocabulary.yml -c && npm run move",
+    "build": "node build.js && npm run move",
     "move": "mv vocabulary.html dist/index.html && mv vocabulary.context.jsonld vocabulary.jsonld vocabulary.ttl dist/",
     "release": "bash -c 'VERSION=$0; npm run build && mv dist/context.jsonld \"dist/$VERSION.jsonld\" && git add -f dist/$VERSION.jsonld'",
     "serve": "http-server dist/"
@@ -19,6 +20,7 @@
   "license": "BSD-3-Clause",
   "devDependencies": {
     "http-server": "^14.1.1",
+    "js-yaml": "^4.1.0",
     "yml2vocab": "^1.6.2"
   }
 }
