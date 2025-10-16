@@ -18,8 +18,8 @@
         localBiblio: {
         },
         specStatus:  "base",
-        shortName:   "example",
-        thisVersion: "https://w3id.org/example",
+        shortName:   "{{SHORTNAME}}",
+        thisVersion: "https://w3id.org/{{SHORTNAME}}",
         doJsonLd:    true,
         noRecTrack: true,
         editors: [{
@@ -90,7 +90,13 @@
   </head>
   <body typeof="owl:Ontology">
     <section id="abstract">
-This is an example abstract.
+      <p>
+{{ABSTRACT}}
+      </p>
+      <p>Alternate versions of the vocabulary definition exist in
+        <a rel="alternate" href="vocabulary.ttl">Turtle</a> and
+        <a rel="alternate" href="vocabulary.jsonld">JSON-LD</a>.
+      </p>
     </section>
     <section id="sotd">
       <p>
@@ -101,9 +107,12 @@ This is an experimental vocabulary and is not fit for production usage.
     <section>
       <h1>Introduction</h1>
 
-      <p>
-This is an example introduction.
-      </p>
+{{INTRODUCTION}}
+
+    <section>
+      <h2>Ecosystem Examples</h2>
+
+{{EXAMPLES}}
 
     </section>
 
