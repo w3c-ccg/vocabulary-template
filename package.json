@@ -7,7 +7,7 @@
     "clean": "rm dist/*",
     "build": "node build.js && npm run move",
     "move": "mv vocabulary.html dist/index.html && mv vocabulary.context.jsonld vocabulary.jsonld vocabulary.ttl dist/",
-    "release": "bash -c 'VERSION=$0; npm run build && mv dist/context.jsonld \"dist/$VERSION.jsonld\" && git add -f dist/$VERSION.jsonld'",
+    "release": "bash -c 'VERSION=$0; npm run build && cp dist/vocabulary.context.jsonld \"dist/contexts/$VERSION.jsonld\" && git add -f dist/contexts/$VERSION.jsonld'",
     "serve": "http-server dist/"
   },
   "repository": {
