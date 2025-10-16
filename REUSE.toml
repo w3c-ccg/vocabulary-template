@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: 2025 Digital Bazaar, Inc. <https://digitalbazaar.com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+version = 1
+
+[[annotations]]
+path = [".gitignore", "package-lock.json", "package.json"]
+precedence = "override"
+SPDX-FileCopyrightText = "205 Digital Bazaar, Inc. <https://digitalbazaar.com>"
+SPDX-License-Identifier = "BSD-3-Clause"

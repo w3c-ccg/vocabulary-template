@@ -1,3 +1,8 @@
+<!--
+Copyright 2025 Digital Bazaar, Inc.
+
+SPDX-License-Identifier: BSD-3-Clause
+-->
 # Vocabulary Template
 
 This is a vocabulary template that can be used to generate human-readable
@@ -51,3 +56,7 @@ Once those changes are committed and pushed, the commit should be tagged (i.e.
 `git tag v1rc1`) and pushed (`git push origin --tags`).
 
 A permanent alias URL can be created at https://w3id.org/
+
+## License
+
+[BSD-3-Clause](LICENSE) Copyright 2023 W3C, Inc., W3C Credentials Community Group
