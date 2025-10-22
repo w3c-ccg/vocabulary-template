@@ -66,18 +66,18 @@ export async function writeHtml({baseDir, html}) {
 }
 
 export async function writeContext({baseDir, yamlObj}) {
-    const yamlUpdate = yaml.dump(yamlObj);
-    const vocab = new yml2vocab.VocabGeneration(yamlUpdate);
+  const yamlUpdate = yaml.dump(yamlObj);
+  const vocab = new yml2vocab.VocabGeneration(yamlUpdate);
 
-    // `vocabulary.context.jsonld` is the default filename used by yml2vocab
-    const jsonldContextPath = path.join(baseDir, 'vocabulary.context.jsonld');
-    // generate the JSON-LD Context
-    const generatedContext = JSON.parse(vocab.getContext());
-    generatedContext['@context'].id = '@id';
-    generatedContext['@context'].type = '@type';
-    const jsonldContext = JSON.stringify(generatedContext);
-    fs.writeFileSync(jsonldContextPath, jsonldContext);
-    console.log('Generated JSON-LD Context:', jsonldContextPath);
+  // `vocabulary.context.jsonld` is the default filename used by yml2vocab
+  const jsonldContextPath = path.join(baseDir, 'vocabulary.context.jsonld');
+  // generate the JSON-LD Context
+  const generatedContext = JSON.parse(vocab.getContext());
+  generatedContext['@context'].id = '@id';
+  generatedContext['@context'].type = '@type';
+  const jsonldContext = JSON.stringify(generatedContext);
+  fs.writeFileSync(jsonldContextPath, jsonldContext);
+  console.log('Generated JSON-LD Context:', jsonldContextPath);
 }
 
 const yamlObj = await loadModel({yamlFilePath});
