@@ -59,4 +59,4 @@ A permanent alias URL can be created at https://w3id.org/
 
 ## License
 
-[BSD-3-Clause](LICENSE) Copyright 2023 W3C, Inc., W3C Credentials Community Group
+[BSD-3-Clause](LICENSE) Copyright 2025 W3C, Inc., W3C Credentials Community Group
