@@ -5,10 +5,13 @@
  */
 
 import {createRequire} from 'node:module';
+import editorconfig from 'editorconfig';
 import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
 import yml2vocab from 'yml2vocab';
+
+const editorConfigJsonLd = await editorconfig.parse('test.jsonld');
 
 const yamlFilePath = './vocabulary.yml';
 
@@ -75,7 +78,8 @@ export async function writeContext({baseDir, yamlObj}) {
   const generatedContext = JSON.parse(vocab.getContext());
   generatedContext['@context'].id = '@id';
   generatedContext['@context'].type = '@type';
-  const jsonldContext = JSON.stringify(generatedContext);
+  const jsonldContext = JSON.stringify(generatedContext, null,
+    editorConfigJsonLd.indent_size);
   fs.writeFileSync(jsonldContextPath, jsonldContext);
   console.log('Generated JSON-LD Context:', jsonldContextPath);
 }
@@ -92,6 +96,8 @@ writeHtml({baseDir, html});
 writeContext({baseDir, yamlObj});
 
 // `vocabulary.jsonld` is the default filename used by yml2vocab
-fs.writeFileSync(path.join(baseDir, 'vocabulary.jsonld'), vocab.getJSONLD());
+fs.writeFileSync(path.join(baseDir, 'vocabulary.jsonld'),
+  JSON.stringify(JSON.parse(vocab.getJSONLD()), null,
+    editorConfigJsonLd.indent_size));
 // `vocabulary.ttl` is the default filename used by yml2vocab
 fs.writeFileSync(path.join(baseDir, 'vocabulary.ttl'), vocab.getTurtle());
